@@ -7,3 +7,4 @@
 2. Traversal
 3. Deletion
 4. Merging
+5. Merging Two Sorted Array
