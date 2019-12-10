@@ -6,3 +6,4 @@
 1. Insertion
 2. Traversal
 3. Deletion
+4. Merging
