@@ -8,3 +8,4 @@
 3. Deletion
 4. Merging
 5. Merging Two Sorted Array
+6. Copying One Array into Another
