@@ -9,3 +9,4 @@
 4. Merging
 5. Merging Two Sorted Array
 6. Copying One Array into Another
+7. Counting Each Element Frequency
