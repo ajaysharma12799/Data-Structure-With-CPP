@@ -11,3 +11,7 @@
 6. Copying One Array into Another
 7. Counting Each Element Frequency
 8. Matrix Multiply
+
+
+### Linked List:-
+1. Created Singly Linked List
