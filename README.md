@@ -14,4 +14,7 @@
 
 
 ### Linked List:-
-1. Created Singly Linked List
+1. Singly Linked List
+    a. Created List
+    b. Print List
+    c. insert at Beginning

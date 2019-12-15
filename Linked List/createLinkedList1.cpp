@@ -1,5 +1,5 @@
 /*
- * Note Creating Singly Linked List using Structure
+ * Note Creating Singly Linked List using Structure & Class
  */
 
 #include <iostream>
@@ -18,14 +18,16 @@ struct Node * head = NULL, * newNode = NULL, * temp = NULL;
 class LinkedList {
     public:
         void createNode(int data);
+        void insertBeg();
         void printList();
 };
 
 int main(int argc, char
     const * argv[]) {
-    int data, choice = 1;
+    int data, choice = 1, option;
     //Creating Object of linkedList class to Access Method
     LinkedList li;
+    // Calling CreateLinkedList Function
     while (choice) {
         cout << "\n Enter Data : ";
         cin >> data;
@@ -33,7 +35,11 @@ int main(int argc, char
         cout << "Do You Want To Insert More Node (0 | 1) : ";
         cin >> choice;
     }
-    // Printing Created List
+    // Calling Printing LinkedList Function
+    li.printList();
+    // Calling InsertatBeginning Function
+    li.insertBeg();
+    // Calling Printing LinkedList Function
     li.printList();
     return 0;
 }
@@ -53,6 +59,25 @@ void LinkedList::createNode(int data) {
     } else {
         temp -> next = newNode;
         temp = newNode;
+    }
+}
+
+// Function to insert at Begenning
+void LinkedList::insertBeg() {
+    // Taking Input of Data
+    int data;
+    cout<<"\n Enter Data To Insert : ";
+    cin>>data;
+    newNode = new Node;
+    if(newNode == NULL) {
+        // if newNode is Null then we are unable to allocate memory
+    }
+    else {
+        // if newNode is not Null then we are going to insert data and address newNode next pointer to head
+        newNode->data = data;
+        newNode->next = head;
+        // making head as newNode
+        head = newNode;
     }
 }
 
