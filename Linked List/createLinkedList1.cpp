@@ -50,6 +50,10 @@ int main(int argc, char
     li.printList();
     // Count Element Function
     li.count();
+    // Calling Insert at Position Function
+    li.insertPosition();
+    // Calling Print List Function
+    li.printList();
     return 0;
 }
 
@@ -112,7 +116,20 @@ void LinkedList::insetEnd()
 
 // Function to insert at Specific Position
 void LinkedList::insertPosition() {
-
+    int position, data, i = 1;
+    //Taking position input
+    cout<<"\n Enter Position : ";
+    cin>>position;
+    newNode = new Node;
+    cout<<"\n Enter Data : ";
+    cin>>newNode->data;
+    temp = head;
+    while(i < position) {
+        temp = temp->next;
+        i++;
+    }
+    newNode->next = temp->next;
+    temp->next = newNode;
 }
 
 // Function to Count Number of Element in List
