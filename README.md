@@ -18,3 +18,5 @@
     a. Created List <br>
     b. Print List <br>
     c. insert at Beginning <br>
+    d. insert at End <br>
+    e. Count Number of Element <br>
