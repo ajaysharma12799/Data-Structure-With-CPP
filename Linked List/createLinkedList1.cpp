@@ -21,6 +21,9 @@ class LinkedList {
         void insertBeg();
         void insetEnd();
         void insertPosition();
+        void deleteBeg();
+        void deleteEnd();
+        void deletePosition();
         void count();
         void printList();
 };
@@ -48,10 +51,14 @@ int main(int argc, char
     li.insetEnd();
     // Calling Printing LinkedList Function
     li.printList();
-    // Count Element Function
+    // Calling Count Element Function
     li.count();
     // Calling Insert at Position Function
     li.insertPosition();
+    // Calling Print List Function
+    li.printList();
+    // Calling DeleteBeginning Function
+    li.deleteBeg();
     // Calling Print List Function
     li.printList();
     return 0;
@@ -132,6 +139,13 @@ void LinkedList::insertPosition() {
     temp->next = newNode;
 }
 
+// Function to delete Element at Beginning
+void LinkedList::deleteBeg(){
+    temp = head;
+    head = head->next;
+    delete temp;
+}
+
 // Function to Count Number of Element in List
 void LinkedList::count() {
     //Counter Variable
@@ -147,7 +161,7 @@ void LinkedList::count() {
 // Function to Print List
 void LinkedList::printList() {
     temp = head;
-    cout<<"\n Created Singly Linked List : ";
+    cout<<"\n Printed Singly Linked List : ";
     while(temp != NULL) {
         cout<<temp->data<<"  ";
         temp = temp->next;
