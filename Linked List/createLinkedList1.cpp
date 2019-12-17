@@ -65,6 +65,10 @@ int main(int argc, char
     li.deleteEnd();
     // Calling Print List Function
     li.printList();
+    // Calling DeleteatPosition Function
+    li.deletePosition();
+    // Calling Print List Function
+    li.printList();
     return 0;
 }
 
@@ -166,6 +170,22 @@ void LinkedList::deleteEnd(){
         prevNode->next = NULL;
     }
     // deleting last node
+    delete temp;
+}
+
+// Function to delete Element at Specific Position
+void LinkedList::deletePosition() {
+    struct Node *nextNode = NULL;
+    temp = head;
+    int position, i = 1;
+    cout<<"\n Enter Position : ";
+    cin>>position;
+    while(i < position-1) {
+        temp = temp->next;
+        i++;
+    }
+    nextNode = temp->next;
+    temp->next = newNode->next;
     delete temp;
 }
 
