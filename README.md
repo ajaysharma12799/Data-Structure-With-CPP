@@ -22,3 +22,4 @@
     e. Count Number of Element <br>
     f. insert at Specific Position <br>
     g. delete Element at Beginning <br>
+    h. delete Element ar End <br>

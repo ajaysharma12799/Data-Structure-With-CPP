@@ -61,6 +61,10 @@ int main(int argc, char
     li.deleteBeg();
     // Calling Print List Function
     li.printList();
+    // Calling DeleteatEnd Function
+    li.deleteEnd();
+    // Calling Print List Function
+    li.printList();
     return 0;
 }
 
@@ -143,6 +147,25 @@ void LinkedList::insertPosition() {
 void LinkedList::deleteBeg(){
     temp = head;
     head = head->next;
+    delete temp;
+}
+
+// Function to delete Element at End
+void LinkedList::deleteEnd(){
+    struct Node *prevNode = NULL;
+    temp = head;
+    while(temp->next != NULL) {
+        prevNode = temp;
+        temp = temp->next;
+    }
+    // Checking if temp is not pointing to head
+    if(temp == head) {
+        head = NULL;
+    }
+    else {
+        prevNode->next = NULL;
+    }
+    // deleting last node
     delete temp;
 }
 
