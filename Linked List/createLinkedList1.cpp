@@ -25,6 +25,8 @@ class LinkedList {
         void deleteEnd();
         void deletePosition();
         void count();
+        void reverseList();
+        void searchElement();
         void printList();
 };
 
@@ -67,6 +69,10 @@ int main(int argc, char
     li.printList();
     // Calling DeleteatPosition Function
     li.deletePosition();
+    // Calling Print List Function
+    li.printList();
+    // Calling Search Element Function
+    li.searchElement();
     // Calling Print List Function
     li.printList();
     return 0;
@@ -187,6 +193,26 @@ void LinkedList::deletePosition() {
     nextNode = temp->next;
     temp->next = newNode->next;
     delete temp;
+}
+
+// Function to search Element 
+void LinkedList::searchElement() {
+    int searchElement, flag = 0;
+    cout<<"\n Enter Element to be Searched : ";
+    cin>>searchElement;
+    temp = head;
+    while(temp->next != NULL) {
+        if(searchElement == temp->data) {
+            flag = 1;
+        }
+        temp = temp->next;
+    }
+    if(flag == 1) {
+        cout<<"\n Element is Present : "<<searchElement;
+    }
+    else {
+        cout<<"\n Element is Not Present : "<<searchElement;
+    }
 }
 
 // Function to Count Number of Element in List

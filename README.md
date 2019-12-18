@@ -24,3 +24,4 @@
     g. delete Element at Beginning <br>
     h. delete Element ar End <br>
     i. delete at Specific Position <br>
+    j. search Element <br>
