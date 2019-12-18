@@ -14,6 +14,12 @@
 
 
 ### Linked List:-
+
+FILE NAME :- <br>
+a.createLinkedList1 => Singly Linked List <br>
+b.createLinkedList2 => Doubly Linked List <br>
+b.createLinkedList3 => Circular Linked List <br>
+
 1. Singly Linked List <br>
     a. Created List <br>
     b. Print List <br>
@@ -26,3 +32,6 @@
     i. delete at Specific Position <br>
     j. search Element <br>
     k. Reverse List using Iteration <br>
+
+2. Doubly Linked List <br>
+    a. Created List <br>
