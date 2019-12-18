@@ -75,6 +75,10 @@ int main(int argc, char
     li.searchElement();
     // Calling Print List Function
     li.printList();
+    // Calling Reverse List Function
+    li.reverseList();
+    // Calling Print List Function
+    li.printList();
     return 0;
 }
 
@@ -193,6 +197,19 @@ void LinkedList::deletePosition() {
     nextNode = temp->next;
     temp->next = newNode->next;
     delete temp;
+}
+
+// Function to Reverse List
+void LinkedList::reverseList() {
+    struct Node *prevNode = NULL, *currNode = NULL, *nextNode = NULL;
+    currNode = head;
+    while(currNode != NULL) {
+        nextNode = currNode->next;// moving pointer to next node
+        currNode->next = prevNode;// making current node to null
+        prevNode = currNode; // moving pointer ahead
+        currNode = nextNode; // moving pointer ahead
+    }
+    head = prevNode;
 }
 
 // Function to search Element 
