@@ -93,6 +93,27 @@ void LinkedList::createList() {
     }
 }
 
+// Function to insert Node at Beginning
+void LinkedList::insertBeg() {
+    int data;
+    // Creating new Node
+    newNode = new Node;
+    cout<<"\n Enter Data : ";
+    cin>>data;
+    // Checking Condition for Head is not null
+    if(head == NULL) {
+        cout<<"\n Unable to Allocate Memort ";
+    }
+    else {
+        newNode->data = data;
+
+        head->prev = newNode;
+        newNode->prev = NULL;
+        newNode->next = head;
+        head = newNode;
+    }
+}
+
 // Function to Print List
 void LinkedList::printList() {
     temp = head;
