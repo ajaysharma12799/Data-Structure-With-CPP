@@ -17,6 +17,9 @@ class LinkedList {
         void insertBeg();
         void insertEnd();
         void insertPosition();
+        void deleteBeg();
+        void deleteEnd();
+        void deletePosition();
         void count();
         void printList();
 };
@@ -56,6 +59,18 @@ int main(int argc, char const * argv[]) {
            li.insertPosition();
            break;
 
+           case 5:
+           li.deleteBeg();
+           break;
+
+           case 6:
+           li.deleteEnd();
+           break;
+
+           case 7:
+           li.deletePosition();
+           break;
+
            case 8:
            li.count();
            break;
@@ -79,6 +94,9 @@ void LinkedList::showChoice() {
     cout<<"\n 2. To Insert Element at Beginning";
     cout<<"\n 3. To Insert ELement at End";
     cout<<"\n 4. To Insert Element at Specific Position";
+    cout<<"\n 5. To Delete Node From Beginning";
+    cout<<"\n 6. To Delete Node From End";
+    cout<<"\n 7. To Delete Node From Specific Position";
     cout<<"\n 8. To Count Elements";
     cout<<"\n 9. To Print List";
     cout<<"\n 0. To Quit";
@@ -163,6 +181,30 @@ void LinkedList::insertPosition() {
     newNode->next = temp->next;
     temp->next = newNode;
     newNode->next->prev = newNode;
+}
+
+// Function to delete element from Beginning
+void LinkedList::deleteBeg() {
+    // Checking head condition not to be null
+    if(head == NULL) {
+        cout<<"\n Failed to Remove Node";
+    }
+    else {
+        temp = head;
+        head = head->next;
+        head->prev = NULL;
+        delete temp;
+    }
+}
+
+// Function to delete element from End
+void LinkedList::deleteEnd() {
+    cout<<"\n Empty Function";
+}
+
+// Function to delete element from Specific Position
+void LinkedList::deletePosition() {
+    cout<<"\n Empty Function";
 }
 
 // Function to Count Number of Element
