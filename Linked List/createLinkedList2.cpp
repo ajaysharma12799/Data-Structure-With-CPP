@@ -17,6 +17,7 @@ class LinkedList {
         void insertBeg();
         void insertEnd();
         void insertPosition();
+        void count();
         void printList();
 };
 
@@ -47,6 +48,14 @@ int main(int argc, char const * argv[]) {
            li.insertBeg();
            break;
 
+           case 3:
+           li.insertEnd();
+           break;
+
+           case 8:
+           li.count();
+           break;
+
            case 9:
             li.printList();
            break;
@@ -66,6 +75,7 @@ void LinkedList::showChoice() {
     cout<<"\n 2. To Insert Element at Beginning";
     cout<<"\n 3. To Insert ELement at End";
     cout<<"\n 4. To Insert Element at Specific Position";
+    cout<<"\n 8. To Count Elements";
     cout<<"\n 9. To Print List";
     cout<<"\n 0. To Quit";
 }
@@ -112,6 +122,34 @@ void LinkedList::insertBeg() {
         newNode->next = head;
         head = newNode;
     }
+}
+
+// Function to insert Node at End
+void LinkedList::insertEnd() {
+    int data;
+    cout<<"\n Enter Data : ";
+    cin>>data;
+    newNode = new Node;
+    newNode->data = data;
+    newNode->next = NULL;
+    newNode->prev = NULL;
+    temp = head;
+    while(temp->next != NULL) {
+        temp = temp->next;
+    }
+    temp->next = newNode;
+    newNode->prev = temp;
+}
+
+// Function to Count Number of Element
+void LinkedList::count() {
+    temp = head;
+    int count = 0;
+    while(temp != NULL) {
+        count++;
+        temp = temp->next;
+    }
+    cout<<"\n Number of Elements : "<<count;
 }
 
 // Function to Print List

@@ -36,3 +36,5 @@ b.createLinkedList3 => Circular Linked List <br>
 2. Doubly Linked List <br>
     a. Created List <br>
     b. insert at Beginning <br>
+    c. insert at End <br>
+    d. Count Number of Element <br>
