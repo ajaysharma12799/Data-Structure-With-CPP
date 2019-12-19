@@ -52,6 +52,10 @@ int main(int argc, char const * argv[]) {
            li.insertEnd();
            break;
 
+           case 4:
+           li.insertPosition();
+           break;
+
            case 8:
            li.count();
            break;
@@ -139,6 +143,26 @@ void LinkedList::insertEnd() {
     }
     temp->next = newNode;
     newNode->prev = temp;
+}
+
+// Function to insert element at Specific Position
+void LinkedList::insertPosition() {
+    int data, position, i = 0;
+    cout<<"\n Enter Position : ";
+    cin>>position;
+    cout<<"\n Enter Data : ";
+    cin>>data;
+    newNode = new Node;
+    newNode->data = data;
+    temp = head;
+    while(i <position - 1) {
+        temp = temp->next;
+        i++;
+    }
+    newNode->prev = temp;
+    newNode->next = temp->next;
+    temp->next = newNode;
+    newNode->next->prev = newNode;
 }
 
 // Function to Count Number of Element
