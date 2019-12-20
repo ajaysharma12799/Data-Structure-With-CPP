@@ -1,3 +1,7 @@
+/*
+ * Note Creating Singly Linked List using Structure & Class
+*/
+
 #include <iostream>
 
 using namespace std;
@@ -199,7 +203,20 @@ void LinkedList::deleteBeg() {
 
 // Function to delete element from End
 void LinkedList::deleteEnd() {
-    cout<<"\n Empty Function";
+    if(head == NULL) {
+        cout<<"\n UnderFlow Condition";
+    }
+    else if(head->next == NULL) {
+        delete head;
+    }
+    else {
+        temp = head;
+        while(temp->next != NULL) {
+            temp = temp->next;
+        }
+        temp->prev->next = NULL;
+        delete temp;
+    }
 }
 
 // Function to delete element from Specific Position

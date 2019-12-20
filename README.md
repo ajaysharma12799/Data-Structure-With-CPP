@@ -40,3 +40,4 @@ b.createLinkedList3 => Circular Linked List <br>
     d. insert Element at Specific Position <br>
     e. Count Number of Element <br>
     f. delete Element at Beginning <br>
+    g. delete Element from End <br>
