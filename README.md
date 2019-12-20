@@ -35,6 +35,7 @@ b. createLinkedList3 => Circular Linked List <br>
 
 2. Doubly Linked List <br>
     => Created List <br>
+    => Print List <br>
     => insert at Beginning <br>
     => insert at End <br>
     => insert Element at Specific Position <br>
@@ -42,3 +43,7 @@ b. createLinkedList3 => Circular Linked List <br>
     => delete Element at Beginning <br>
     => delete Element from End <br>
     => reverse List using Iteration <br>
+
+3. Circular Linked List <br>
+    => Created List <br>
+    => Print List <br>
