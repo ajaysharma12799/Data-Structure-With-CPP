@@ -221,7 +221,16 @@ void LinkedList::deleteEnd() {
 
 // Function to delete element from Specific Position
 void LinkedList::deletePosition() {
-    cout<<"\n Empty Function";
+    int position, i = 1;
+    cout<<"\n Enter Position : ";
+    cin>>position;
+    temp = head;
+    while(i < position) {
+        temp = temp->next;
+        i++;
+    }
+    temp->prev->next = temp->next;
+    temp->next->prev = temp->prev; 
 }
 
 // Function to Count Number of Element
