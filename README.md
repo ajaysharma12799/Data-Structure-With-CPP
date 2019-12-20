@@ -16,9 +16,9 @@
 ### Linked List:-
 
 FILE NAME :- <br>
-a.createLinkedList1 => Singly Linked List <br>
-b.createLinkedList2 => Doubly Linked List <br>
-b.createLinkedList3 => Circular Linked List <br>
+a. createLinkedList1 => Singly Linked List <br>
+b. createLinkedList2 => Doubly Linked List <br>
+b. createLinkedList3 => Circular Linked List <br>
 
 1. Singly Linked List <br>
     => Created List <br>
@@ -41,3 +41,4 @@ b.createLinkedList3 => Circular Linked List <br>
     => Count Number of Element <br>
     => delete Element at Beginning <br>
     => delete Element from End <br>
+    => reverse List using Iteration <br>

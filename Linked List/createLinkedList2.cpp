@@ -26,6 +26,7 @@ class LinkedList {
         void deletePosition();
         void count();
         void printList();
+        void reverseList();
 };
 
 int main(int argc, char const * argv[]) {
@@ -83,6 +84,10 @@ int main(int argc, char const * argv[]) {
             li.printList();
            break;
 
+           case 10:
+           li.reverseList();
+           break;
+
            case 0: 
            break;
        }
@@ -103,6 +108,7 @@ void LinkedList::showChoice() {
     cout<<"\n 7. To Delete Node From Specific Position";
     cout<<"\n 8. To Count Elements";
     cout<<"\n 9. To Print List";
+    cout<<"\n 10, Reverse List";
     cout<<"\n 0. To Quit";
 }
 
@@ -251,5 +257,23 @@ void LinkedList::printList() {
     while(temp != NULL) {
         cout<<" "<<temp->data;
         temp = temp->next;
+    }
+}
+
+// Function to Reverse List
+void LinkedList::reverseList() {
+    struct Node *currentNode = head, *nextNode = NULL;
+
+    // Swap next and prev pointer
+    while(currentNode != NULL) {
+        nextNode = currentNode->prev;
+        currentNode->prev = currentNode->next;
+        currentNode->next = nextNode;
+        currentNode = currentNode->prev;
+    }
+
+    // before changing head checking case for empty list or with only one node
+    if(nextNode != NULL) {
+        head = nextNode->prev;
     }
 }
