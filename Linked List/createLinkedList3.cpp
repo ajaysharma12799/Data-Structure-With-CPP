@@ -138,20 +138,21 @@ void LinkedList::insetBeg() {
 
 // Function to insert Node at Specific position
 void LinkedList::insertPosition() {
-    // int data, position, i = 1;
-    // cout<<"\n Enter Position : ";
-    // cin>>position;
-    // cout<<"\n Enter Data : ";
-    // cin>>data;
-    // temp = head;
-    // // Allocating Memory
-    // newNode = new Node;
-    // newNode->data = data;
-    // newNode->next = NULL;
-    // while(i < position -1) {
-    //     temp = temp->next;
-    //     i++;
-    // }
+    int data, position, i = 1;
+    cout<<"\n Enter Position : ";
+    cin>>position;
+    cout<<"\n Enter Data : ";
+    cin>>data;
+    temp = head;
+    // Allocating Memory
+    newNode = new Node;
+    newNode->data = data;
+    while(i < position -1) {
+        temp = temp->next;
+        i++;
+    }
+    newNode->next = temp->next;
+    temp->next = newNode;
 }
 
 // Function to insert Node at End
