@@ -47,3 +47,8 @@ b. createLinkedList3 => Circular Linked List <br>
 3. Circular Linked List <br>
     => Created List <br>
     => Print List <br>
+
+### Searching & Sorting:-
+
+1. Linear Search <br>
+2. Binary Search <br>
