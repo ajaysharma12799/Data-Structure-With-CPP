@@ -17,6 +17,8 @@ class LinkedList {
     public:
         void showChoices();
         void createList();
+        void insetBeg();
+        void insertPosition();
         void printList();
 };
 
@@ -40,6 +42,14 @@ int main(int argc, char const *argv[])
             }
             break;
 
+            case 2: 
+            li.insetBeg();
+            break;
+
+            case 3:
+            li.insertPosition();
+            break;
+
             case 9:
             li.printList();
             break;
@@ -54,8 +64,10 @@ int main(int argc, char const *argv[])
 
 // Function to Show Choices
 void LinkedList::showChoices () {
-    cout<<"\n 1. To Create List : ";
-    cout<<"\n 9. To Print List : ";
+    cout<<"\n 1. To Create List";
+    cout<<"\n 2. To Insert At Beginning";
+    cout<<"\n 3. To Insert At Specific Position";
+    cout<<"\n 9. To Print List";
     cout<<"\n 0. To Quit";
 }
 
@@ -93,4 +105,32 @@ void LinkedList::printList() {
         }
         cout<<" "<<temp->data;
     }
+}
+
+// Function to insert Node at Beginning
+void LinkedList::insetBeg() {
+    int data;
+    // Allocating Memory
+    newNode = new Node;
+    cout<<"\n Enter Data : ";
+    cin>>data;
+    newNode->data = data;
+    newNode->next = head;
+    // Checking Head Condition not to be NULL
+    if(head == NULL) {
+        cout<<"\n List is Empty";
+    }
+    else {
+        temp = head;
+        while(temp->next != head) {
+            temp = temp->next;
+        }
+        temp->next = newNode;
+        head = newNode;
+    }
+}
+
+// Function to insert Node at Specific position
+void LinkedList::insertPosition() {
+    cout<<"Empty Function";
 }
