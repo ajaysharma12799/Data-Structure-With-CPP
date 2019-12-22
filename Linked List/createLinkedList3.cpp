@@ -218,7 +218,26 @@ void LinkedList::deleteBeg() {
 
 // Function to delete Node at End
 void LinkedList::deleteEnd() {
-    cout<<"\n Empty Function";
+    struct Node *current = NULL;
+
+    if(head == NULL) {
+        cout<<"\n UnderFlow Condition";
+    }else if(head->next == NULL) {
+        delete head;
+    }
+    else {
+        current = head;
+        while(current->next != head) {
+            temp = current;
+            current = current->next;
+        }
+        temp->next = head;
+        /*
+        *   Another Way:-
+        *   temp->next = current->next;
+        */
+       delete current;
+    }
 }
 
 // Function to delete Node at Specific Position
