@@ -258,5 +258,12 @@ void LinkedList::deletePosition() {
 
 // Function to Reverse List
 void LinkedList::reverseList() {
-    cout<<"\n Empty Function";
+    struct Node *prev = NULL, *current = head, *next = NULL;
+    while(current->next != head) {
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+    head = prev;
 }
