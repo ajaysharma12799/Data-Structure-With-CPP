@@ -20,6 +20,10 @@ class LinkedList {
         void insetBeg();
         void insertPosition();
         void insertEnd();
+        void deleteBeg();
+        void deleteEnd();
+        void deletePosition();
+        void reverseList();
         void printList();
 };
 
@@ -55,6 +59,22 @@ int main(int argc, char const *argv[])
             li.insertEnd();
             break;
 
+            case 5:
+            li.deleteBeg();
+            break;
+
+            case 6:
+            li.deleteEnd();
+            break;
+
+            case 7:
+            li.deletePosition();
+            break;
+
+            case 8:
+            li.reverseList();
+            break;
+
             case 9:
             li.printList();
             break;
@@ -73,6 +93,10 @@ void LinkedList::showChoices () {
     cout<<"\n 2. To Insert At Beginning";
     cout<<"\n 3. To Insert At Specific Position";
     cout<<"\n 4. To Insert At End";
+    cout<<"\n 5. To Delete At Beginning";
+    cout<<"\n 6. To Delete At End";
+    cout<<"\n 7. To Delete At Specific position";
+    cout<<"\n 8. To Reverse List";
     cout<<"\n 9. To Print List";
     cout<<"\n 0. To Quit";
 }
@@ -169,4 +193,40 @@ void LinkedList::insertEnd() {
         temp = temp->next;
     }
     temp->next = newNode;
+}
+
+// Function to delete Node at Beginning
+void LinkedList::deleteBeg() {
+    if(head == NULL) {
+        cout<<"\n Failed to Remove Node";
+    }
+    else {
+        temp = head;
+        while(temp->next != head) {
+            temp = temp->next;
+        }
+        head = head->next;
+        temp->next = head;
+        /*
+        *   Another Way :-
+            *   temp->next = head->next;
+            *   head = head->next;
+        */
+        delete temp;
+    }
+}
+
+// Function to delete Node at End
+void LinkedList::deleteEnd() {
+    cout<<"\n Empty Function";
+}
+
+// Function to delete Node at Specific Position
+void LinkedList::deletePosition() {
+    cout<<"\n Empty Function";
+}
+
+// Function to Reverse List
+void LinkedList::reverseList() {
+    cout<<"\n Empty Function";
 }
