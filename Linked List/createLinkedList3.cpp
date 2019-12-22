@@ -242,7 +242,18 @@ void LinkedList::deleteEnd() {
 
 // Function to delete Node at Specific Position
 void LinkedList::deletePosition() {
-    cout<<"\n Empty Function";
+    struct Node *nextNode = NULL;
+    int position, i = 1;
+    cout<<"\n Enter Position : ";
+    cin>>position;
+    temp = head;
+    while(i < position -1) {
+        temp = temp->next;
+        i++;
+    }
+    nextNode = temp->next;
+    temp->next = nextNode->next;
+    delete nextNode;
 }
 
 // Function to Reverse List

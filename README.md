@@ -51,6 +51,8 @@ b. createLinkedList3 => Circular Linked List <br>
     => insert at End <br>
     => insert at Specific position <br>
     => delete at Beginning <br>
+    => delete at End <br>
+    => delete at Specific Position <br>
 
 ### Searching & Sorting:-
 
