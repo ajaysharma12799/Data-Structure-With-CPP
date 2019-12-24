@@ -13,7 +13,12 @@ int main(int argc, char const *argv[])
         cin>>arr[i];
     }
     for(int i=0; i<size-1; i++) {
-        for(int j=0; j<size-1; j++) {
+        /*
+        Improving Bubble sort by number of iteration as the last element is bubbled when i value is increasing
+        for(int j=0; j<size-1; j++) => Old Statement
+        for(int j=0; j<size-1-i; j++) => New Statement
+        */
+        for(int j=0; j<size-1-i; j++) {
             if(arr[j] > arr[j+1]) {
                 temp = arr[j];
                 arr[j] = arr[j+1];
