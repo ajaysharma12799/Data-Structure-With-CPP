@@ -59,3 +59,6 @@ b. createLinkedList3 => Circular Linked List <br>
 
 1. Linear Search <br>
 2. Binary Search <br>
+3. Jump Search -- Left<br>
+
+4. Bubble Sort <br>
