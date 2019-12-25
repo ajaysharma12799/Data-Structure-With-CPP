@@ -63,3 +63,5 @@ b. createLinkedList3 => Circular Linked List <br>
 
 4. Bubble Sort <br>
 5. Insertion Sort <br>
+6. Selection Sort <br>
+7. Quick Sort <br>
