@@ -69,4 +69,4 @@ b. createLinkedList3 => Circular Linked List <br>
 
 
 ### Stack
-1. Using Array
+1. Array Implementation
