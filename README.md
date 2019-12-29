@@ -1,4 +1,4 @@
-# Working WIth Data Structure in C++
+# Working With Data Structure in C++
 
 ## Topics
 
@@ -72,3 +72,7 @@ b. createLinkedList3 => Circular Linked List <br>
 1. Array Implementation
 2. Linked List Implementation
 3. Balance Paranthesis
+
+### Queue
+1. Array Implementation
+2. Linked List Implementation
