@@ -76,5 +76,9 @@ b. createLinkedList3 => Circular Linked List <br>
 ### Queue
 1. Array Implementation
 2. Linked List Implementation
+
     ### Circular Queue
     1. Array Implementation
+    2. Linked List Implementation : Simillar to Circular Linked List
+
+3. Stack Implementation
