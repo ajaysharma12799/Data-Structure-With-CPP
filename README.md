@@ -81,4 +81,7 @@ b. createLinkedList3 => Circular Linked List <br>
     1. Array Implementation
     2. Linked List Implementation : Simillar to Circular Linked List
 
+    ### Doubly Ended Queue
+    1. Array Implementation
+
 3. Stack Implementation
