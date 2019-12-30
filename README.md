@@ -57,15 +57,15 @@ b. createLinkedList3 => Circular Linked List <br>
 
 ### Searching & Sorting:-
 
-1. Linear Search <br>
-2. Binary Search <br>
-3. Jump Search -- Left<br>
+1. Linear Search
+2. Binary Search
+3. Jump Search -- Lef
 
-4. Bubble Sort <br>
-5. Insertion Sort <br>
-6. Selection Sort <br>
-7. Quick Sort <br>
-8. Merge Sort <br>
+4. Bubble Sort
+5. Insertion Sort
+6. Selection Sort
+7. Quick Sort
+8. Merge Sort
 
 
 ### Stack
@@ -76,3 +76,5 @@ b. createLinkedList3 => Circular Linked List <br>
 ### Queue
 1. Array Implementation
 2. Linked List Implementation
+    ### Circular Queue
+    1. Array Implementation
