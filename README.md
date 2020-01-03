@@ -85,3 +85,9 @@ b. createLinkedList3 => Circular Linked List <br>
     1. Array Implementation
 
 3. Stack Implementation
+
+### Tree
+1. Binary Tree
+    => Create <br>
+    => Insert Method <br>
+    
