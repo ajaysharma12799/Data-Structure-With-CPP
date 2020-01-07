@@ -221,5 +221,27 @@ void BTree::iterativePreOrderTraversal(struct Node *temp) {
 
 // Iterative In-Order Traversal
 void BTree::iterativePostOrderTraversal(struct Node *temp) {
-    
+    stack<Node *> s1, s2;
+    struct Node *fake;
+
+    s1.push(temp);// pushing root node into stack
+    while( !s1.empty() ) { // checking if stack one is not empty than remove element from stack one and push into stack two
+
+        fake = s1.top();
+        s1.pop();
+        s2.push(fake);
+
+        if(fake->left != NULL) {// pushing left children of popped node into stack one
+            s1.push(fake->left);
+        }
+        if(fake->right != NULL) {// pushing right children of popped node into stack one
+            s1.push(fake->right);
+        }
+
+    }
+    while( !s2.empty() ) { // checking if stack two is not empty the pop elements from stack and print data
+        fake = s2.top();
+        s2.pop();
+        cout<<" "<<fake->data;
+    }
 }
