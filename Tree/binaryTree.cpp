@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stack>
 
 using namespace std;
 
@@ -16,6 +17,9 @@ class BTree {
         void inOrderTraversal(struct Node *temp);
         void preOrderTraversal(struct Node *temp);
         void postOrderTraversal(struct Node *temp);
+        void iterativeInOrderTraversal(struct Node *temp);
+        void iterativePreOrderTraversal(struct Node *temp);
+        void iterativePostOrderTraversal(struct Node *temp);
 };
 
 int main(int argc, char const *argv[])
@@ -59,6 +63,18 @@ int main(int argc, char const *argv[])
                 cout<<"Post-Order Traversal : ";
                 obj.postOrderTraversal(root);
             break;
+            case 6:
+                cout<<"Iterative In-Order Traversal : ";
+                obj.iterativeInOrderTraversal(root);
+            break;
+            case 7:
+                cout<<"Iterative Pre-Order Traversal : ";
+                obj.iterativePreOrderTraversal(root);
+            break;
+            case 8:
+                cout<<"Iterative Post-Order Traversal : ";
+                obj.iterativePostOrderTraversal(root);
+            break;
 
         }
 
@@ -72,6 +88,9 @@ void BTree::showChoice() {
     cout<<"\n 3. In-Order Traversal";
     cout<<"\n 4. Pre-Order Traversal";
     cout<<"\n 5. Post-Order Traversal";
+    cout<<"\n 6. Iterative In-Order Traversal";
+    cout<<"\n 7. Iterative Pre-Order Traversal";
+    cout<<"\n 8. Iterative Post-Order Traversal";
     cout<<"\n 0. Quit";
 }
 
@@ -155,4 +174,52 @@ void BTree::postOrderTraversal(struct Node *temp) {
         postOrderTraversal(temp->right);
         cout<<" "<<temp->data;
     }
+}
+
+// Iterative In-Order Traversal
+void BTree::iterativeInOrderTraversal(struct Node *temp) {
+    stack<Node *> s;
+    while(true) {
+
+        while(temp != NULL) {
+            s.push(temp);
+            temp = temp->left;
+        }
+
+        if(s.empty()) { // breaking condition of outer while loop
+            break;
+        }
+
+        temp = s.top(); // error : a value of type void cannot be assigned to an entity of type Node *, so we are taking top into root then rempvong element using pop method
+        s.pop(); 
+        cout<<" "<<temp->data;
+        temp = temp->right;
+
+    }
+}
+
+// Iterative In-Order Traversal
+void BTree::iterativePreOrderTraversal(struct Node *temp) {
+    stack<Node *> s;
+    while(true) {
+
+        while(temp != NULL) {
+            cout<<" "<<temp->data;
+            s.push(temp);
+            temp = temp->left;
+        }
+
+        if(s.empty()) { // breaking condition for outer loop
+            break;
+        }
+
+        temp = s.top();
+        s.pop();
+        temp = temp->right;
+    }
+}
+
+// Iterative In-Order Traversal
+void BTree::iterativePostOrderTraversal(struct Node *temp) {
+    
 }

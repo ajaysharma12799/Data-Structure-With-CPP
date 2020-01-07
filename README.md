@@ -87,7 +87,9 @@ b. createLinkedList3 => Circular Linked List <br>
 3. Stack Implementation
 
 ### Tree
-1. Binary Tree
+1. Binary Tree <br>
     => Create <br>
     => Insert Method <br>
-    
+    => In-Order Traversal (Recursive) <br>
+    => Pre-Order Traversal (Recursive) <br>
+    => Post-Order Traversal (Recursive) <br>
