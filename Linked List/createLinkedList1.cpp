@@ -17,6 +17,7 @@ struct Node * head = NULL, * newNode = NULL, * temp = NULL;
 // Creating Class To Add Functions
 class LinkedList {
     public:
+        void showChoice();
         void createNode(int data);
         void insertBeg();
         void insetEnd();
@@ -30,56 +31,77 @@ class LinkedList {
         void printList();
 };
 
-int main(int argc, char
-    const * argv[]) {
-    int data, choice = 1, option;
-    //Creating Object of linkedList class to Access Method
+int main(int argc, char const * argv[]) {  
+    int choice;
     LinkedList li;
-    // Calling CreateLinkedList Function
-    while (choice) {
-        cout << "\n Enter Data : ";
-        cin >> data;
-        li.createNode(data);
-        cout << "Do You Want To Insert More Node (0 | 1) : ";
-        cin >> choice;
-    }
-    // Calling Printing LinkedList Function
-    li.printList();
-    // Calling InsertatBeginning Function
-    li.insertBeg();
-    // Calling Printing LinkedList Function
-    li.printList();
-    // Calling InsertatEnd Function
-    li.insetEnd();
-    // Calling Printing LinkedList Function
-    li.printList();
-    // Calling Count Element Function
-    li.count();
-    // Calling Insert at Position Function
-    li.insertPosition();
-    // Calling Print List Function
-    li.printList();
-    // Calling DeleteBeginning Function
-    li.deleteBeg();
-    // Calling Print List Function
-    li.printList();
-    // Calling DeleteatEnd Function
-    li.deleteEnd();
-    // Calling Print List Function
-    li.printList();
-    // Calling DeleteatPosition Function
-    li.deletePosition();
-    // Calling Print List Function
-    li.printList();
-    // Calling Search Element Function
-    li.searchElement();
-    // Calling Print List Function
-    li.printList();
-    // Calling Reverse List Function
-    li.reverseList();
-    // Calling Print List Function
-    li.printList();
+    do {
+
+        li.showChoice();
+        cout<<"\n Enter Choice From Above Option : ";
+        cin>>choice;
+        switch(choice) {
+            case 1: {
+                int choice = 1, data;
+                while(choice) {
+                    cout<<"\n Enter Data : ";
+                    cin>>data;
+                    li.createNode(data);
+                    cout<<"\n Do You Want to Enter More Node ( 0 | 1 ) :";
+                    cin>>choice;
+                }
+            }
+            break;
+            case 2:
+                li.insertBeg();
+            break;
+            case 3:
+                li.insetEnd();
+            break;
+            case 4:
+                li.insertPosition();
+            break;
+            case 5:
+                li.deleteBeg();
+            break;
+            case 6:
+                li.deleteEnd();
+            break;
+            case 7:
+                li.deletePosition();
+            break;
+            case 8:
+                li.count();
+            break;
+            case 9:
+                li.reverseList();
+            break;
+            case 10:
+                li.searchElement();
+            break;
+            case 11:
+                li.printList();
+            break;
+        }
+
+    } while(choice != 0);
+
     return 0;
+}
+
+// Function to Show Choices
+void LinkedList::showChoice() {
+    cout<<"\n 1. Create Node";
+    cout<<"\n 2. Insert at Beginning";
+    cout<<"\n 3. Insert at End";
+    cout<<"\n 4. Insert at Specific Position";
+    cout<<"\n 5. Delete From Beginning";
+    cout<<"\n 6. Delete From End";
+    cout<<"\n 7. Delete From Specific Position";
+    cout<<"\n 8. Count Number of Element";
+    cout<<"\n 9. Reverse List";
+    cout<<"\n 10. Search ELement";
+    cout<<"\n 11. Print List";
+    cout<<"\n 0. To Quit";
 }
 
 // Function to Create Singly Linked List
