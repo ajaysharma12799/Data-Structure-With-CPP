@@ -1,5 +1,7 @@
 #include <iostream>
 #include <stack>
+// #include <bits/stl_queue.h>
+#include <queue>
 
 using namespace std;
 
@@ -17,6 +19,7 @@ class BTree {
         void inOrderTraversal(struct Node *temp);
         void preOrderTraversal(struct Node *temp);
         void postOrderTraversal(struct Node *temp);
+        void leveOrderTraversal(struct Node *temp);
         void iterativeInOrderTraversal(struct Node *temp);
         void iterativePreOrderTraversal(struct Node *temp);
         void iterativePostOrderTraversal(struct Node *temp);
@@ -75,6 +78,10 @@ int main(int argc, char const *argv[])
                 cout<<"Iterative Post-Order Traversal : ";
                 obj.iterativePostOrderTraversal(root);
             break;
+            case 9:
+                cout<<"Level Order Traversal : ";
+                obj.leveOrderTraversal(root);
+            break;
 
         }
 
@@ -91,6 +98,7 @@ void BTree::showChoice() {
     cout<<"\n 6. Iterative In-Order Traversal";
     cout<<"\n 7. Iterative Pre-Order Traversal";
     cout<<"\n 8. Iterative Post-Order Traversal";
+    cout<<"\n 9. Level Order Traversal";
     cout<<"\n 0. Quit";
 }
 
@@ -222,7 +230,7 @@ void BTree::iterativePreOrderTraversal(struct Node *temp) {
 // Iterative In-Order Traversal
 void BTree::iterativePostOrderTraversal(struct Node *temp) {
     stack<Node *> s1, s2;
-    struct Node *fake;
+    struct Node *fake = NULL;
 
     s1.push(temp);// pushing root node into stack
     while( !s1.empty() ) { // checking if stack one is not empty than remove element from stack one and push into stack two
@@ -243,5 +251,28 @@ void BTree::iterativePostOrderTraversal(struct Node *temp) {
         fake = s2.top();
         s2.pop();
         cout<<" "<<fake->data;
+    }
+}
+
+// Level Order Traversal
+void BTree::leveOrderTraversal(struct Node *temp) {
+    queue<Node *> q;
+    struct Node *fake = NULL;
+
+    q.push(temp);
+    while( !q.empty() ) {
+
+        fake = q.front();
+        q.pop();
+        cout<<" "<<fake->data;
+
+        if(fake->left != NULL) {
+            q.push(fake->left);
+        }
+
+        if(fake->right != NULL) {
+            q.push(fake->right);
+        }
+
     }
 }
