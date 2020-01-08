@@ -16,13 +16,19 @@ class BTree {
         void showChoice();
         struct Node *createNode(int data);
         struct Node *addNode(struct Node *temp, int value);
+
         void inOrderTraversal(struct Node *temp);
         void preOrderTraversal(struct Node *temp);
         void postOrderTraversal(struct Node *temp);
         void leveOrderTraversal(struct Node *temp);
+
         void iterativeInOrderTraversal(struct Node *temp);
         void iterativePreOrderTraversal(struct Node *temp);
         void iterativePostOrderTraversal(struct Node *temp);
+
+        int count(struct Node *temp);
+        void height(struct Node *temp);
+
 };
 
 int main(int argc, char const *argv[])
@@ -82,6 +88,15 @@ int main(int argc, char const *argv[])
                 cout<<"Level Order Traversal : ";
                 obj.leveOrderTraversal(root);
             break;
+            case 10:{
+                int count = obj.count(root);
+                cout<<"\n Number of Nodes : "<<count;
+            }
+            break;
+            case 11:
+                cout<<"Height of Tree : ";
+                obj.height(root);
+            break;
 
         }
 
@@ -99,6 +114,8 @@ void BTree::showChoice() {
     cout<<"\n 7. Iterative Pre-Order Traversal";
     cout<<"\n 8. Iterative Post-Order Traversal";
     cout<<"\n 9. Level Order Traversal";
+    cout<<"\n 10. Count Number of Node";
+    cout<<"\n 11. Height of Tree";
     cout<<"\n 0. Quit";
 }
 
@@ -275,4 +292,25 @@ void BTree::leveOrderTraversal(struct Node *temp) {
         }
 
     }
+}
+
+// Function to count number of nodes 
+int BTree::count(struct Node *temp) {
+    int left, right;
+
+    // checking for tree to be null
+    if(temp == NULL) {
+        return 0;
+        cout<<"\n root is null";
+    }
+    else {
+        left = count(temp->left);
+        right = count(temp->right);
+        return left + right + 1;
+    }
+}
+
+// Function to find height of tree
+void BTree::height(struct Node *temp) {
+
 }
