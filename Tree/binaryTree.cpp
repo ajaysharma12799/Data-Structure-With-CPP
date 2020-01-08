@@ -28,6 +28,7 @@ class BTree {
 
         int count(struct Node *temp);
         int height(struct Node *temp);
+        int sumNode(struct Node *temp);
 
 };
 
@@ -96,6 +97,9 @@ int main(int argc, char const *argv[])
             case 11:
                 cout<<"\n Height of Tree : "<<obj.height(root);;
             break;
+            case 12:
+                cout<<"\n Sum of Tree : "<<obj.sumNode(root);;
+            break;
 
         }
 
@@ -115,6 +119,7 @@ void BTree::showChoice() {
     cout<<"\n 9. Level Order Traversal";
     cout<<"\n 10. Count Number of Node";
     cout<<"\n 11. Height of Tree";
+    cout<<"\n 12. Sum of Tree";
     cout<<"\n 0. Quit";
 }
 
@@ -327,5 +332,19 @@ int BTree::height(struct Node *temp) {
         else {
             return right + 1;
         }
+    }
+}
+
+// Function to add node
+int BTree::sumNode(struct Node *temp) {
+    int left = 0, right = 0;
+    // Checking Null Condition
+    if(temp == NULL) {
+        return 0;
+    }
+    else {
+        left = sumNode(temp->left);
+        right = sumNode(temp->right);
+        return left + right + temp->data;
     }
 }
