@@ -27,7 +27,7 @@ class BTree {
         void iterativePostOrderTraversal(struct Node *temp);
 
         int count(struct Node *temp);
-        void height(struct Node *temp);
+        int height(struct Node *temp);
 
 };
 
@@ -94,8 +94,7 @@ int main(int argc, char const *argv[])
             }
             break;
             case 11:
-                cout<<"Height of Tree : ";
-                obj.height(root);
+                cout<<"\n Height of Tree : "<<obj.height(root);;
             break;
 
         }
@@ -311,6 +310,22 @@ int BTree::count(struct Node *temp) {
 }
 
 // Function to find height of tree
-void BTree::height(struct Node *temp) {
+int BTree::height(struct Node *temp) {
+    int left = 0, right = 0;
+    // Checking condition for root node to be null
+    if(temp == NULL) {
+        return 0;
+    }
+    else {
+        left = height(temp->left);
+        right = height(temp->right);
 
+        // finding larger height
+        if(left > right) {
+            return left + 1;
+        }
+        else {
+            return right + 1;
+        }
+    }
 }
