@@ -98,3 +98,10 @@ b. createLinkedList3 => Circular Linked List <br>
     => Pre-Order Traversal (Iterative) <br>
     => Post-Order Traversal (Iterative) <br>
     => Count Number of Nodes <br>
+
+2. Binary Search Tree <br>
+    => Creation <br>
+    => Searching <br>
+    => Insertion using Iteration <br>
+    => Insertion using Recursion <br>
+    => In-Order Traversal <br>
