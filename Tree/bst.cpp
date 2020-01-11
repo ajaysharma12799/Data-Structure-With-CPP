@@ -17,7 +17,12 @@ class BST {
         struct Node *insertRecursive(struct Node *temp, int key);
 
         void inorderTraversal(struct Node *temp);
+
         struct Node *searchElement(struct Node *temp, int key);
+        struct Node *deleteElement(struct Node *temp, int key);
+
+        struct Node *inorderSuccessor(struct Node *temp);
+        struct Node *inorderPredecessor(struct Node *temp);
 };
 
 int main(int argc, char const *argv[])
@@ -70,6 +75,20 @@ int main(int argc, char const *argv[])
                 }
             }
             break;
+            case 6:{
+                int key;
+                struct Node *fake = NULL;
+                cout<<"\n Enter Key to be deleted : ";
+                cin>>key;
+                fake = obj.deleteElement(root, key);
+                if(fake != NULL) {
+                    cout<<"\n Deleted Node";
+                }
+                else {
+                    cout<<"\n Fail to Delete Node";
+                }
+            }
+            break;
 
         }
 
@@ -84,6 +103,7 @@ void BST::showChoice() {
     cout<<"\n 3. Insert via Recursion";
     cout<<"\n 4. In-Order Traversal";
     cout<<"\n 5. Searching Element";
+    cout<<"\n 6. Delete Element";
     cout<<"\n 0. To Quit";
 }
 
@@ -166,4 +186,64 @@ struct Node *BST::searchElement(struct Node *temp, int key) {
     else if(key > temp->data) {
         return searchElement(temp->right, key);
     }
+}
+
+// Function to delete Node
+struct Node *BST::deleteElement(struct Node *temp, int key) {
+
+    // Checking for NULL Condition
+    if(temp == NULL) {
+        return temp;
+    }
+
+    // Checking for key is smaller
+    if(key < temp->data) {
+        temp->left = deleteElement(temp->left, key);
+    }
+    else if(key > temp->data) { // Checking for key is greater
+        temp->right = deleteElement(temp->right, key);
+    }
+    else { // found when key is same as node data
+        
+        // Checking whether node has one child or no child
+        if(temp->left == NULL) {
+            struct Node *fake = temp->right;
+            delete temp; // deleting right node
+            return fake;
+        }
+        else if (temp->right == NULL) {
+            struct Node *fake = temp->left;
+            delete temp; // deleting left node
+            return fake;
+        }
+        else { // node having both children
+            struct Node *fake = inorderSuccessor(temp->right);
+            // struct Node *fake = inorderPredecessor(temp->left);
+            temp->data = fake->data;
+            temp->right = deleteElement(temp->right, fake->data); // deleting inorder successor
+        }
+
+    }
+    return temp;
+
+}
+
+// Function to find In-Order Successor
+struct Node *BST::inorderSuccessor(struct Node *temp) { // finding smallest element from right sub tree
+
+    while( (temp != NULL) && (temp->left != NULL)) {
+        temp = temp->left;
+    }
+    return temp;
+
+}
+
+// Function to find In-Order Predecessor
+struct Node *BST::inorderPredecessor(struct Node *temp) { // finding largest element from left sub tree
+    
+    while( (temp != NULL) && (temp->right != NULL) ) {
+        temp = temp->right;
+    }
+    return temp;
+
 }

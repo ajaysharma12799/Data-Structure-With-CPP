@@ -105,3 +105,6 @@ b. createLinkedList3 => Circular Linked List <br>
     => Insertion using Iteration <br>
     => Insertion using Recursion <br>
     => In-Order Traversal <br>
+    => Deletion <br>
+    => In-Order Successor Function <br>
+    => In-Order Predecessor <br>
