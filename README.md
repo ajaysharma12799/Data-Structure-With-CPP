@@ -108,3 +108,10 @@ b. createLinkedList3 => Circular Linked List <br>
     => Deletion <br>
     => In-Order Successor Function <br>
     => In-Order Predecessor <br>
+    => BST Generation From Pre-order <br>
+
+3. AVL Tree <br>
+    => Creation <br>
+    => Insertion <br>
+    => Deletion <br>
+    => Searching <br>
