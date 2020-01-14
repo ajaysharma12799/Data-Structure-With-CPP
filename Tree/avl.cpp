@@ -22,7 +22,10 @@ class AVL {
         struct Node *createNode(int data);
         struct Node *leftRotate(struct Node *temp);
         struct Node *rightRotate(struct Node *temp);
+        struct Node *inorderSuccessor(struct Node *temp);
+        struct Node *inorderPredecessor(struct Node *temp);
         struct Node *insertNode(struct Node *temp, int data);
+        struct Node *deleteElement(struct Node *temp, int data);
 };
 
 int main(int argc, char const *argv[])
@@ -43,6 +46,21 @@ int main(int argc, char const *argv[])
                 cout<<"\n Enter Data to insert : ";
                 cin>>data;
                 root = obj.insertNode(root, data);
+            }
+            break;
+
+            case 2: {
+                int data;
+                struct Node *fake = NULL;
+                cout<<"\n Enter Data to delete : ";
+                cin>>data;
+                fake = obj.deleteElement(root, data);
+                if(fake != NULL) {
+                    cout<<"\n Deleted Node";
+                }
+                else {
+                    cout<<"\n Failed to delete Node";
+                }
             }
             break;
 
@@ -195,6 +213,79 @@ struct Node *AVL::insertNode(struct Node *temp, int data) {
    return temp;
 }
 
+// Function to delete node
+struct Node *AVL::deleteElement(struct Node *temp, int data) {
+    /* 1. Normal BST Deletion Operation */
+    if(temp == NULL) { // checking for null condition
+        return temp;
+    }
+
+    if(data < temp->data) { // if data is smaller then node data then traverse toward left sub tree
+        temp->left = deleteElement(temp->left, data);
+    }
+    else if (data > temp->data) { // if data is greater then node data then traverse toward right sub tree
+        temp->right = deleteElement(temp->right, data);
+    }
+    else { // found key which is as same as data
+        
+        if(temp->left == NULL) { // if node has right children
+            struct Node *fake = temp->right;
+            delete temp; // deleting right node
+            return fake;
+        }
+        else if (temp->right == NULL) { // if node has left children
+            struct Node *fake = temp->left;
+            delete temp;
+            return fake;
+        }
+        else { // node having both children
+            struct Node *fake = inorderSuccessor(temp->right); // getting smallest element from right sub tree
+            temp->data = fake->data; // copying data 
+            temp->right = deleteElement(temp->right, fake->data);
+        }
+    }
+
+    /* 2. Updating Height */
+    temp->height = max( (height(temp->left)), height(temp->right) ) + 1;
+
+    /* 3. Getting Balance Factor */
+    int balance = getBalance(temp);
+
+    /*
+        NOTE :- if balance factor is between {-1, 0, 1} then then tree is AVL but if not then there are 4 case of rotation
+        1. left left or LL
+        2. right right or RR
+        3. left right or LR
+        4, right left or RL
+    */
+
+   // LL Rotation
+   if( (balance > 1) && (data < temp->left->data) ) { // heavy left condition
+       return rightRotate(temp);
+   }
+
+   // RR Rotation
+   if( (balance < -1) && (data > temp->right->data) ) { // heavy right condition
+       return leftRotate(temp);
+   }
+
+   // LEFT RIGHT Rotation
+   if( (balance > 1) && (data > temp->left->data) ) {
+       temp->left = leftRotate(temp->left);
+       return rightRotate(temp);
+   }
+
+   // RIGHT LEFT Rotation
+   if( (balance < -1) && (data < temp->right->data)) {
+       temp->right = rightRotate(temp->right);
+       return leftRotate(temp);
+   }
+
+   // returning unchanged pointer
+   return temp;
+   
+}
+
 // Function to return max of two value
 int AVL::max(int a, int b) {
     return (a > b) ? a : b;
@@ -219,4 +310,20 @@ int AVL::getBalance(struct Node *temp) {
     else {
         return ( height(temp->left) - height(temp->right) );
     }
+}
+
+// Function to find inorder successor or smallest element in left sub tree
+struct Node *AVL::inorderSuccessor(struct Node *temp) {
+    while( (temp != NULL) && (temp->left != NULL) ) {
+        temp = temp->left;
+    }
+    return temp;
+}
+
+// Function to find inorder predecessor or largest element in right sub tree
+struct Node *AVL::inorderPredecessor(struct Node *temp) {
+    while( (temp != NULL) && (temp->right != NULL) ) {
+        temp = temp->right;
+    }
+    return temp;
 }
