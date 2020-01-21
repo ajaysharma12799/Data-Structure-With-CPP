@@ -12,6 +12,10 @@
 7. Counting Each Element Frequency
 8. Matrix Multiply
 
+### Recursion :-
+1. Printing n numbers
+2. Sum of n natural number
+
 
 ### Linked List:-
 
