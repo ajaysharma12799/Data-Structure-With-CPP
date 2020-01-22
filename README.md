@@ -15,6 +15,11 @@
 ### Recursion :-
 1. Printing n numbers
 2. Sum of n natural number
+3. Factorial of number
+4. Power of number
+5. Fibonacci sum
+6. Combination Problem( nCr )
+7. Tower of Hanoi
 
 
 ### Linked List:-
