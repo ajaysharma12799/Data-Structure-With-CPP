@@ -21,6 +21,15 @@
 6. Combination Problem( nCr )
 7. Tower of Hanoi
 
+### Strings :-
+1. Length
+2. Reverse
+3. Vowels, Consonents and Words Count
+4. Validation of String
+5. Changing Cases(UPPER & LOWER)
+6. Compare
+7. Palindrome
+
 
 ### Linked List:-
 
